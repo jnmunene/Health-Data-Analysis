@@ -1,6 +1,18 @@
 # task-automation
-Task
-1) Using the intents in the Messages Raw worksheet and build a USER JOURNEY for each user
+## Data
+The data in the (.xlsx) file is real-world health data. For privacy of 
+users, content of the messages received from users has been removed and their
+phone numbers redacted. Included, are two worksheets:
+1) Messages Raw: Incoming message log.
+a. Datetime: Date and time of message
+b. UserID: Unique identifier for each user. For privacy of our clients, users’ phone
+numbers have been replaced with this ID.
+c. Original Text: Incoming message from user (removed for privacy purposes)
+d. Translation: Text translated from Swahili (removed for privacy purposes)
+e. Intent: As detected by the NLP model
+f. Confidence: Confidence score/level assigned to the intent by the NLP model
+## Task
+1) Use the intents in the Messages Raw worksheet and build a USER JOURNEY for each user
 (where relevant.) The User Journey can be defined as follows:
 a. Some (not all) users ask more than one question.
 b. For those that ask more than one question, we know what date they asked the

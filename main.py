@@ -1,10 +1,8 @@
 import openpyxl
 
-
 def main():
     wb = openpyxl.load_workbook('healthcare.xlsx')
     sheet = wb.active
-
     user_data = {}
 
     for row in sheet.iter_rows():
@@ -15,6 +13,7 @@ def main():
         
         if len(data_arr) >= 4:
             user_id = data_arr[1]
+            
             if user_id not in user_data:
                 user_data[user_id] = {'data': [
                     [data_arr[0], data_arr[2]]
@@ -34,10 +33,12 @@ def main():
 
     file_obj = open("healthdata.txt", "w")
     all_user_details = ""
+    
     for key, value in user_data.items():
         user_id = key
         intents = user_data[key]['data']
         list_of_intents_and_dates = ""
+        
         for intent in intents:
             date = intent[0]
             intention = intent[1]
@@ -50,7 +51,6 @@ def main():
     file_obj.write(all_user_details)
     file_obj.close()
 
-
-
-
-main()
+if __name__ == "__main__":
+    main()
+    
